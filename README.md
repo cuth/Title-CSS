@@ -21,10 +21,11 @@ Here is how you would target these elements in CSS:
 
 This is why it works
 --------------------
-HTML class names are *case-sensitive*. This is mentioned in the [HTML4 spec](http://www.w3.org/TR/REC-html40/struct/global.html#h-7.5.2). L. David Baron of Mozilla interprets the CSS and HTML specs [here](http://dbaron.org/css/test/casesens). 
+HTML class names are *case-sensitive*. This is mentioned in the [HTML4 spec](http://www.w3.org/TR/REC-html40/struct/global.html#h-7.5.2). L. David Baron of Mozilla interprets the CSS and HTML specs [here](http://dbaron.org/css/test/casesens).
+
     Still not convinced? Try any browser since Netscape 6. Still afraid of utilizing case-sensitivity? Just make a rule not to reuse Title classes as lowercase descendant classes (a good tip would be to make all Title classes two word classes).
 
-Block identifiers or "Title" classes create a scope for all the descendent selectors within the block. Descendant selectors can be repeated in other Title blocks without style collision.
+Block identifiers or "Title" classes create a scope for all the descendent classes within the block. Descendant classes can be repeated in other Title blocks without style collision.
 
 Enjoy the benefits of BEM CSS such as the block style grouping of elements and the security of keeping selectors from interfering with each other.
 
@@ -35,7 +36,7 @@ How does it help?
 * Shorter class names are faster to type and faster to read.
 * Title case classes are easy to spot in the markup.
 
-Pitfalls and Workarounds
+Pitfall and workaround
 ------------------------
 Title CSS may have issues when you use a Title block to contain other Title blocks. If a containing Title block has the same descendant selector class as one that it envelopes than there will be a conflict. In which case you should use [child selectors](http://www.w3.org/TR/CSS21/selector.html#child-selectors) on Title blocks that at as containers.
 
