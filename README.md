@@ -1,9 +1,9 @@
 Title CSS
 =========
 
-Title CSS is a organizational technique gear to help you write beautiful and maintainable CSS. Similar to [BEM](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/), Title CSS aims to make CSS more readable by giving visual cues.
+Title CSS is a organizational technique geared to help you write beautiful and maintainable CSS. Similar to [BEM](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/), Title CSS aims to make CSS more readable by giving visual cues.
 
-The trick to Title CSS is simple. For any global CSS classes use a title case name (uppercase the first letter). For any modifiers or descendant classes use a lowercase first letter.
+The trick to Title CSS is simple. For any global CSS class use a title case name (uppercase the first letter). For any modifiers or descendant class begin the class with a lowercase letter.
 
 Here is an example of the markup:
 ```html
@@ -21,24 +21,24 @@ Here is how you would target these elements in CSS:
 
 This is why it works
 --------------------
+Block identifiers or "Title" classes create a scope for all the descendent classes within the block. Descendant classes can be repeated in other Title blocks without style collision.
+
 HTML class names are *case-sensitive*. This is mentioned in the [HTML4 spec](http://www.w3.org/TR/REC-html40/struct/global.html#h-7.5.2). L. David Baron of Mozilla interprets the CSS and HTML specs [here](http://dbaron.org/css/test/casesens).
 
-> Still not convinced? Try any browser since Netscape 6. Still afraid of utilizing case-sensitivity? Just make a rule not to reuse Title classes as lowercase descendant classes (a good tip would be to make all Title classes two word classes).
-
-Block identifiers or "Title" classes create a scope for all the descendent classes within the block. Descendant classes can be repeated in other Title blocks without style collision.
+> Still not convinced? Try any browser since Netscape 6. Still afraid of utilizing case-sensitivity? Just make a rule not to reuse Title classes as a lowercase descendant class.
 
 Enjoy the benefits of BEM CSS such as the block style grouping of elements and the security of keeping selectors from interfering with each other.
 
 How does it help?
 -----------------
 * Write CSS classes in a more natural manner.
-* CSS selectors resemble the written language more since sentences start with an uppercase letter.
-* Shorter class names are faster to type and faster to read.
-* Title case classes are easy to spot in the markup.
+* CSS selectors resemble the written language since sentences start with an uppercase letter.
+* Shorter class names are faster to type and easier to scan.
+* Title case classes are easy to spot in the markup. To see what a lowercase descendant class belongs to, just traverse up the nodes for a Title class.
 
 Pitfall and workaround
 ------------------------
-Title CSS may have issues when you use a Title block to contain other Title blocks. If a containing Title block has the same descendant selector class as one that it envelopes than there will be a conflict. In which case you should use [child selectors](http://www.w3.org/TR/CSS21/selector.html#child-selectors) on Title blocks that at as containers.
+Title CSS may have issues when you use a Title block to contain other Title blocks. If a containing Title block has the same descendant selector class as one that it envelopes than there will be a conflict. In which case you should use [child selectors](http://www.w3.org/TR/CSS21/selector.html#child-selectors) on Title blocks that act as containers.
 
 To demonstrate the issue:
 ```html
