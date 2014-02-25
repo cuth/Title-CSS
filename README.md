@@ -23,7 +23,7 @@ This is why it works
 --------------------
 HTML class names are *case-sensitive*. This is mentioned in the [HTML4 spec](http://www.w3.org/TR/REC-html40/struct/global.html#h-7.5.2). L. David Baron of Mozilla interprets the CSS and HTML specs [here](http://dbaron.org/css/test/casesens).
 
-    Still not convinced? Try any browser since Netscape 6. Still afraid of utilizing case-sensitivity? Just make a rule not to reuse Title classes as lowercase descendant classes (a good tip would be to make all Title classes two word classes).
+> Still not convinced? Try any browser since Netscape 6. Still afraid of utilizing case-sensitivity? Just make a rule not to reuse Title classes as lowercase descendant classes (a good tip would be to make all Title classes two word classes).
 
 Block identifiers or "Title" classes create a scope for all the descendent classes within the block. Descendant classes can be repeated in other Title blocks without style collision.
 
