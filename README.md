@@ -1,7 +1,7 @@
 Title CSS
 =========
 
-Title CSS is a organizational technique geared to help you write beautiful and maintainable CSS. Similar to [BEM](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/), Title CSS aims to make CSS more readable by giving visual cues.
+Title CSS is an organizational technique geared to help you write beautiful and maintainable CSS. Similar to [BEM](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/), Title CSS aims to make CSS more readable by giving visual cues.
 
 The trick to Title CSS is simple. For any global CSS class use a title case name (uppercase the first letter). For any modifiers or descendant class begin the class with a lowercase letter.
 
@@ -38,7 +38,7 @@ How does it help?
 
 Pitfall and workaround
 ------------------------
-Title CSS may have issues when you use a Title block to contain other Title blocks. If a containing Title block has the same descendant selector class as one that it envelopes than there will be a conflict. In which case you should use [child selectors](http://www.w3.org/TR/CSS21/selector.html#child-selectors) on Title blocks that act as containers.
+Title CSS may have issues when you use a Title block to contain other Title blocks. If a containing Title block has the same descendant selector class as one that it envelopes than there will be a conflict, in which case you should use [child selectors](http://www.w3.org/TR/CSS21/selector.html#child-selectors) in Title blocks that act as containers.
 
 To demonstrate the issue:
 ```html
