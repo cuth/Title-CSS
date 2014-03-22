@@ -106,7 +106,7 @@ A modifier is a class that can be applied to another class to change the state o
 <ul class="Group ofProducts">...</ul>
 ```
 
-### Objects [(OOCSS)](http://coding.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/)
+### Objects ([OOCSS](http://coding.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/))
 Objects are capitalized in Title CSS just like title classes because they are both occupying the global CSS namespace. Objects are different from Modules in that they typically don't have descendants and they are usually combined with other classes. To distinguish objects from title classes prefix the object class name with an indefinite article such as "A" or "Un".
 
 ```html
