@@ -72,6 +72,46 @@ The solution:
     .Container > .body {}
 ```
 
+Terminology
+-----------
+
+*Examples are in SCSS or CSS*
+
+### Modules
+A module the grouping of related CSS selectors that make up a block. Each selector in a module begins with a Title class. Modules are described in more detail in [SMACSS](http://smacss.com/).
+
+```scss
+.Module {
+    > .relatedChild {}
+    .relatedDescendant {}
+}
+```
+
+### Title Classes
+A title class is the capitalized class that creates the scope for any descendant classes in a module.
+
+```scss
+.TitleClass {
+    .scopedElement {}
+}
+```
+
+### Modifiers
+A modifier is a class that can be applied to another class to change the state of that class. Modfiers are usually appended to title classes even if they only affect descendant elements in the module. Title CSS is about making selectors readable so begin modifiers with "is" or a short preposition.
+
+```html
+<div class="Slider isEnabled"></div>
+<ul class="List of5"></ul>
+<div class="Checkout isActive"></div>
+<ul class="Group ofProducts"></ul>
+```
+
+### Objects [(OOCSS)](http://coding.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/)
+Objects are capitalized in Title CSS just like title classes becuase they are both occupying the global CSS namespace. Objects are different from Modules in that they typically don't have descendants and they are usually combined with other classes. To distinguish objects from title classes prefix the object class name with an article such as "A" or "Un". Suggestions for prefixing singleton objects would be "The", "El", or "Le".
+
+```html
+```
+
 Performance
 -----------
 Title CSS does not help you write the most performant selectors. The issue is that browsers typically read selectors from right to left. If there are commonly used classes or elements at the end of the selectors then the browser will most likely have to do more work to read through the styles. Best practice is to keep the descendant selectors as shallow as possible.
