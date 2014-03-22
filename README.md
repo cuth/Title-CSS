@@ -8,7 +8,7 @@ The trick to Title CSS is simple. For any global CSS class use a title case name
 Here is an example of the markup:
 ```html
 <div class="Title modifier">
-    <p class="descendant">
+    <p class="descendant">...
 </div>
 ```
 
@@ -43,15 +43,15 @@ Title CSS may have issues when you use a Title block to contain other Title bloc
 To demonstrate the issue:
 ```html
 <div class="Container">
-    <header class="header"></header>
+    <header class="header">...</header>
     <main class="body">
         <section class="Title">
-            <div class="header"></div>
-            <div class="body"></div>
+            <div class="header">...</div>
+            <div class="body">...</div>
         </section>
         <section class="Title">
-            <div class="header"></div>
-            <div class="body"></div>
+            <div class="header">...</div>
+            <div class="body">...</div>
         </section>
     </main>
 </div>
@@ -75,10 +75,10 @@ The solution:
 Terminology
 -----------
 
-*Examples are in SCSS or CSS*
+*Examples are in SCSS*
 
 ### Modules
-A module the grouping of related CSS selectors that make up a block. Each selector in a module begins with a Title class. Modules are described in more detail in [SMACSS](http://smacss.com/).
+A module is the grouping of related CSS selectors that make up a block. Each selector in a module begins with a Title class. Modules are described in more detail in [SMACSS](http://smacss.com/).
 
 ```scss
 .Module {
@@ -97,19 +97,31 @@ A title class is the capitalized class that creates the scope for any descendant
 ```
 
 ### Modifiers
-A modifier is a class that can be applied to another class to change the state of that class. Modfiers are usually appended to title classes even if they only affect descendant elements in the module. Title CSS is about making selectors readable so begin modifiers with "is" or a short preposition.
+A modifier is a class that can be applied to another class to change the state of that class. Modifiers are usually appended to title classes even if they only affect descendant elements in the module. Title CSS is about making selectors readable so begin modifiers with "is" or a short preposition.
 
 ```html
-<div class="Slider isEnabled"></div>
-<ul class="List of5"></ul>
-<div class="Checkout isActive"></div>
-<ul class="Group ofProducts"></ul>
+<div class="Slider isEnabled">...</div>
+<ul class="List of5">...</ul>
+<div class="Checkout isActive">...</div>
+<ul class="Group ofProducts">...</ul>
 ```
 
 ### Objects [(OOCSS)](http://coding.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/)
-Objects are capitalized in Title CSS just like title classes becuase they are both occupying the global CSS namespace. Objects are different from Modules in that they typically don't have descendants and they are usually combined with other classes. To distinguish objects from title classes prefix the object class name with an article such as "A" or "Un". Suggestions for prefixing singleton objects would be "The", "El", or "Le".
+Objects are capitalized in Title CSS just like title classes because they are both occupying the global CSS namespace. Objects are different from Modules in that they typically don't have descendants and they are usually combined with other classes. To distinguish objects from title classes prefix the object class name with an indefinite article such as "A" or "Un".
 
 ```html
+<div class="Profile">
+    <figure class="image UnaMedia">...</figure>
+</div>
+<h1 class="ATitle">...</h1>
+```
+
+### Singleton
+A singleton is a module that will only be used once. Since Title CSS only names classes and doesn't use ID's for CSS selectors it maybe be benificial to prefix singletons to distinguish them from other modules or objects. In this case prefixing the class name with definite article such as "The", "El", "La", or "Le" would be appropriate.
+
+```html
+<header class="TheHeader">...</header>
+<footer class="LeFooter">...</footer>
 ```
 
 Performance
