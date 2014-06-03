@@ -21,7 +21,7 @@ Here is how you would target these elements in CSS:
 
 This is why it works
 --------------------
-Block identifiers or "Title" classes create a scope for all the descendent classes within the block. Descendant classes can be repeated in other Title blocks without style collision.
+Block identifiers or "Title" classes create a scope for all the descendant classes within the block. Descendant classes can be repeated in other Title blocks without style collision.
 
 HTML class names are *case-sensitive*. This is mentioned in the [HTML4 spec](http://www.w3.org/TR/REC-html40/struct/global.html#h-7.5.2). L. David Baron of Mozilla interprets the CSS and HTML specs [here](http://dbaron.org/css/test/casesens).
 
@@ -107,7 +107,7 @@ A modifier is a class that can be applied to another class to change the state o
 ```
 
 ### Objects ([OOCSS](http://coding.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/))
-Objects are capitalized in Title CSS just like title classes because they are both occupying the global CSS namespace. Objects are different from Modules in that they typically don't have descendants and they are usually combined with other classes. To distinguish objects from title classes prefix the object class name with an indefinite article such as "A" or "Un".
+Objects are capitalized in Title CSS just like title classes because they are both occupying the global CSS name-space. Objects are different from Modules in that they typically don't have descendants and they are usually combined with other classes. To distinguish objects from title classes prefix the object class name with an indefinite article such as "A" or "Un".
 
 ```html
 <div class="Profile">
@@ -117,11 +117,21 @@ Objects are capitalized in Title CSS just like title classes because they are bo
 ```
 
 ### Singleton
-A singleton is a module that will only be used once. Since Title CSS only names classes and doesn't use ID's for CSS selectors it maybe be benificial to prefix singletons to distinguish them from other modules or objects. In this case prefixing the class name with definite article such as "The", "El", "La", or "Le" would be appropriate.
+A singleton is a module that will only be used once. Since Title CSS only names classes and doesn't use ID's for CSS selectors it maybe be beneficial to prefix singletons to distinguish them from other modules or objects. In this case prefixing the class name with definite article such as "The", "El", "La", or "Le" would be appropriate.
 
 ```html
 <header class="TheHeader">...</header>
 <footer class="LeFooter">...</footer>
+```
+
+### Grouping Title Classes
+Title classes can show a relationship to others by using the same name as a prefix. This can be beneficial for templates and widgets to even pollute the global name-space less. Modules should only show this relationship when their existence depends on each other. Grouping can help break up a large module into smaller, more managable, modules.
+
+```html
+<div class="LargeModule">
+    <div class="LargeModule-section">...</div>
+    <div class="LargeModule-area">...</div>
+</div>
 ```
 
 Performance
@@ -136,7 +146,7 @@ Have a look at this example that can improve performance as well as maintainabil
 .Title .selectors {}
 ```
 
-SCSS and other pre-processer syntaxes
+SCSS and other pre-processor syntaxes
 -------------------------------------
 Sass is an excellent tool to help write Title CSS. With the nesting ability found in pre-processing languages, it is easy to identify new Title blocks in the stylesheet.
 
